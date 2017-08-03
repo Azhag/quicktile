@@ -177,11 +177,12 @@ def _make_positions():
 
     # TODO: Plumb GravityLayout.__init__'s arguments into the config file
     gvlay = GravityLayout()
-    col_width = 1.0 / COLUMN_COUNT
-    cycle_steps = tuple(round(col_width * x, 3) for x in range(1, COLUMN_COUNT))
-
-    middle_steps = (1.0,) + cycle_steps
-    edge_steps = (0.5,) + cycle_steps
+    # col_width = 1.0 / COLUMN_COUNT
+    # cycle_steps = tuple(round(col_width * x, 3) for x in range(1, COLUMN_COUNT))
+    # middle_steps = (1.0,) + cycle_steps
+    # edge_steps = (0.5,) + cycle_steps
+    middle_steps = (0.333, 0.5, 0.6, 1.0)
+    edge_steps = (0.2, 0.25, 0.333, 0.5)
 
     positions = {
         'middle': [gvlay(width, 1, 'middle') for width in middle_steps],
