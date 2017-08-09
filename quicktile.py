@@ -181,12 +181,12 @@ def _make_positions():
     # cycle_steps = tuple(round(col_width * x, 3) for x in range(1, COLUMN_COUNT))
     # middle_steps = (1.0,) + cycle_steps
     # edge_steps = (0.5,) + cycle_steps
-    middle_steps = (0.35, 0.5, 0.6, 1.0)
-    edge_steps = (0.2, 0.25, 0.325, 0.5)
-    edge_left_steps = (0.192, 0.242, 0.317, 0.491)
+    middle_steps = (0.5, 0.6, 0.35)
+    edge_steps = (0.325, 0.25, 0.2, 0.5)
+    edge_left_steps = (0.317, 0.242, 0.192, 0.491)
 
     positions = {
-        'middle': [gvlay(width, 1, 'middle') for width in middle_steps],
+        'middle': [gvlay(width, 1, 'middle') for width in middle_steps] + [gvlay(0.425, 1, 'right', x=0.75)],
     }
 
     for grav in ('top', 'bottom'):
