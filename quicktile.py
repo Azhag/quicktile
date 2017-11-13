@@ -183,7 +183,7 @@ def _make_positions():
     # edge_steps = (0.5,) + cycle_steps
     middle_steps = (0.5, 0.6, 0.35)
     edge_steps = (0.325, 0.25, 0.2, 0.5)
-    edge_left_steps = (0.317, 0.242, 0.192, 0.491)
+    # edge_left_steps = (0.317, 0.242, 0.192, 0.491)
 
     positions = {
         'middle': [gvlay(width, 1, 'middle') for width in middle_steps] + [gvlay(0.425, 1, 'right', x=0.75)],
@@ -194,11 +194,11 @@ def _make_positions():
     for grav in ('right',):
         positions[grav] = [gvlay(width, 1, grav) for width in edge_steps]
     for grav in ('left',):
-        positions[grav] = [gvlay(width, 1, grav) for width in edge_left_steps]
+        positions[grav] = [gvlay(width, 1, grav) for width in edge_steps]
     for grav in ('top-right', 'bottom-right'):
         positions[grav] = [gvlay(width, 0.5, grav) for width in edge_steps]
     for grav in ('top-left', 'bottom-left'):
-        positions[grav] = [gvlay(width, 0.5, grav) for width in edge_left_steps]
+        positions[grav] = [gvlay(width, 0.5, grav) for width in edge_steps]
 
     return positions
 
